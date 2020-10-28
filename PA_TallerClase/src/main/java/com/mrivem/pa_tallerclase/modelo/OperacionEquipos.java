@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class OperacionEquipos extends Conexion {
     // registro de un nuevo equipo
@@ -103,6 +104,86 @@ public class OperacionEquipos extends Conexion {
      
                 return equipo;
             } 
+            return null;       
+        }catch (SQLException e) {
+            System.err.println(e);
+            return null;
+        } finally {
+            try {
+                con.close();
+            } catch (SQLException e) {
+                System.err.println(e);
+            }
+        }
+    }
+    
+    public ArrayList<Equipo> buscarPorSala(int id_sala) {
+        ArrayList<Equipo> equipos = new ArrayList<>();
+        
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        Connection con = getConexion();
+        String sql = "SELECT * FROM equipos WHERE id_sala = ?";
+        try{
+            ps = con.prepareStatement(sql);
+            ps.setInt(1, id_sala);
+            rs = ps.executeQuery();
+            
+            while(rs.next()){
+                int id = rs.getInt("id");
+                String tipo = rs.getString("tipo");
+                String estado = rs.getString("estado");
+                
+                Equipo e = new Equipo();
+                e.setId(id);
+                e.setId_sala(id_sala);
+                e.setTipo(tipo);
+                e.setEstado(estado);
+                
+                equipos.add(e);
+            }
+            
+            if(equipos.size() > 0) return equipos;
+            return null;       
+        }catch (SQLException e) {
+            System.err.println(e);
+            return null;
+        } finally {
+            try {
+                con.close();
+            } catch (SQLException e) {
+                System.err.println(e);
+            }
+        }
+    }
+    
+    public ArrayList<Equipo> listaConsolidada() {
+        ArrayList<Equipo> equipos = new ArrayList<>();
+        
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        Connection con = getConexion();
+        String sql = "SELECT * FROM equipos";
+        try{
+            ps = con.prepareStatement(sql);
+            rs = ps.executeQuery();
+            
+            while(rs.next()){
+                int id = rs.getInt("id");
+                int id_sala = rs.getInt("id_sala");
+                String tipo = rs.getString("tipo");
+                String estado = rs.getString("estado");
+                
+                Equipo e = new Equipo();
+                e.setId(id);
+                e.setId_sala(id_sala);
+                e.setTipo(tipo);
+                e.setEstado(estado);
+                
+                equipos.add(e);
+            }
+            
+            if(equipos.size() > 0) return equipos;
             return null;       
         }catch (SQLException e) {
             System.err.println(e);

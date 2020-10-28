@@ -51,10 +51,8 @@ public class ControladorP00 implements ActionListener {
                     ControladorP10 con = new ControladorP10(new P10_VistaEncargado());
                     con.iniciar();
                 } else if (loggedUser instanceof Profesor){
-                    P20_VistaProfesor newFrame = new P20_VistaProfesor();
-                    newFrame.setTitle("Vista de profesor");
-                    newFrame.setVisible(true);
-                    newFrame.setLocationRelativeTo(null);
+                    ControladorP20 con = new ControladorP20(new P20_VistaProfesor());
+                    con.iniciar();
                 } else if (loggedUser instanceof Administrador){
                     ControladorP30 con = new ControladorP30(new P30_VistaAdministrador());
                     con.iniciar();

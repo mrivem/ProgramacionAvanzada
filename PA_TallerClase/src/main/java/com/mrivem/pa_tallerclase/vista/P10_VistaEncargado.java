@@ -23,6 +23,7 @@ public class P10_VistaEncargado extends javax.swing.JFrame {
         jButton_registroEquipo = new javax.swing.JButton();
         jButton_consultarEquipo = new javax.swing.JButton();
         jButton_cerrarSesion = new javax.swing.JButton();
+        jButton_listadoConsolidado = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -35,6 +36,8 @@ public class P10_VistaEncargado extends javax.swing.JFrame {
 
         jButton_cerrarSesion.setText("Cerrar sesión");
 
+        jButton_listadoConsolidado.setText("Listado consolidado");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -44,14 +47,15 @@ public class P10_VistaEncargado extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel_titulo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jButton_cerrarSesion)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(0, 115, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jButton_registroEquipo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton_consultarEquipo, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE))
-                        .addGap(0, 111, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jButton_cerrarSesion)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                            .addComponent(jButton_consultarEquipo, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
+                            .addComponent(jButton_listadoConsolidado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(0, 111, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -63,7 +67,9 @@ public class P10_VistaEncargado extends javax.swing.JFrame {
                 .addComponent(jButton_registroEquipo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton_consultarEquipo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 146, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton_listadoConsolidado)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 106, Short.MAX_VALUE)
                 .addComponent(jButton_cerrarSesion)
                 .addContainerGap())
         );
@@ -127,6 +133,7 @@ public class P10_VistaEncargado extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton jButton_cerrarSesion;
     public javax.swing.JButton jButton_consultarEquipo;
+    public javax.swing.JButton jButton_listadoConsolidado;
     public javax.swing.JButton jButton_registroEquipo;
     private javax.swing.JLabel jLabel_titulo;
     private javax.swing.JPanel jPanel1;

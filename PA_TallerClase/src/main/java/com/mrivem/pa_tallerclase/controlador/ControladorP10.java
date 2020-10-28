@@ -6,6 +6,7 @@ import com.mrivem.pa_tallerclase.vista.P00_InicioSesion;
 import com.mrivem.pa_tallerclase.vista.P10_VistaEncargado;
 import com.mrivem.pa_tallerclase.vista.P11_RegistrarEquipamiento;
 import com.mrivem.pa_tallerclase.vista.P12_ConsultarEquipamiento;
+import com.mrivem.pa_tallerclase.vista.P13_MostrarListadoConsolidado;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JFrame;
@@ -23,6 +24,7 @@ public class ControladorP10 implements ActionListener {
         this.frame.jButton_registroEquipo.addActionListener(this);
         this.frame.jButton_consultarEquipo.addActionListener(this);
         this.frame.jButton_cerrarSesion.addActionListener(this);
+        this.frame.jButton_listadoConsolidado.addActionListener(this);
     }
     
     public void iniciar(){
@@ -42,6 +44,11 @@ public class ControladorP10 implements ActionListener {
         
         if(e.getSource() == frame.jButton_consultarEquipo){
             ControladorP12 con = new ControladorP12(new P12_ConsultarEquipamiento());
+            con.iniciar();
+        }
+        
+        if(e.getSource() == frame.jButton_listadoConsolidado){
+            ControladorP13 con = new ControladorP13(new P13_MostrarListadoConsolidado());
             con.iniciar();
         }
         
