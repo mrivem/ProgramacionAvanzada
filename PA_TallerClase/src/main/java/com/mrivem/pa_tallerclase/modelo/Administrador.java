@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mrivem.pa_tallerclase;
+package com.mrivem.pa_tallerclase.modelo;
 
 /**
  *
@@ -15,8 +15,8 @@ public class Administrador extends Usuario{
     public static final int TIPO_ADMINISTRADOR = 2;
     public static final int TIPO_ENCARGADO = 3;
     
-    public Administrador(String nombre, int id, String clave_acceso){
-        super(nombre, id, clave_acceso);
+    public Administrador(int id, String nombre, String clave_acceso){
+        super(id, nombre, clave_acceso);
     }
     
     public String generarContraseña(){

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mrivem.pa_tallerclase;
+package com.mrivem.pa_tallerclase.modelo;
 
 /**
  *
@@ -13,8 +13,8 @@ public class Profesor extends Usuario{
     // FIELDS
     
     // CONSTRUCTOR
-    public Profesor(String nombre, int id, String clave_acceso){
-        super(nombre, id, clave_acceso);
+    public Profesor(int id, String nombre, String clave_acceso){
+        super(id, nombre, clave_acceso);
     }
     
     // FUNCIONES

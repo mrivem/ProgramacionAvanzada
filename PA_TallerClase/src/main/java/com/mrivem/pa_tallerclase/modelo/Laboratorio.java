@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mrivem.pa_tallerclase;
+package com.mrivem.pa_tallerclase.modelo;
 
 import java.util.ArrayList;
 
